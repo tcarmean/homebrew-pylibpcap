@@ -6,6 +6,8 @@ class Pylibpcap <Formula
 	sha1 '30b5d2e9dc8dcf6df067a216d9ecae109ff34f86'
 
 	def install
-		system "python setup.py install"
+		python do
+			system python, 'setup.py', 'install', "--prefix=#{prefix}"
+		end
 	end
 end
